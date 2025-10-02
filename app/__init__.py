@@ -2,15 +2,22 @@
 
 # hacemos las importaciones necesarias
 from quart import Quart
+from app.config.database import create_db_and_tables
+
+# importamos las rutas
+from routes.main import main_bp
+
 
 def create_app():
     app = Quart(__name__)
 
-    # importamos las rutas
-    from routes.main import main_bp
-
     # manejo de los Blueprints
     app.register_blueprint(main_bp)
+
+    # configura una funcion de inicializacion
+    @app.before_serving
+    async def startup():
+        await create_db_and_tables()
 
     return app
 
