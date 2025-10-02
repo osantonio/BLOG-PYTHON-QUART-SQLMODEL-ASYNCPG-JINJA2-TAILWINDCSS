@@ -1,2 +1,12 @@
+# Archivos de bytecode
+*.pyc
+*.pyo
+*.pyd
+
+# Carpetas de caché
+__pycache__/
+
+
 /.venv
 .env
+

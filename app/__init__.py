@@ -5,7 +5,7 @@ from quart import Quart
 from app.config.database import create_db_and_tables
 
 # importamos las rutas
-from routes.main import main_bp
+from app.routes.main import main_bp
 
 
 def create_app():
