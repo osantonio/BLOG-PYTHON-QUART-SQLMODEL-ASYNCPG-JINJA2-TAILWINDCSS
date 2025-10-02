@@ -3,170 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Blog de Prueba</title>
-    <style>
-        /* --- Estilos Generales --- */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        h1, h2 {
-            color: #333;
-        }
-
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* --- Cabecera (Header) --- */
-        .main-header {
-            background-color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #e0e0e0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .main-header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        .main-header p {
-            margin: 5px 0 0;
-            color: #777;
-        }
-
-        /* --- Navegación --- */
-        nav {
-            background-color: #333;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        /* --- Contenido Principal --- */
-        .main-content {
-            padding: 30px 0;
-        }
-
-        .post-entry {
-            background-color: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-        }
-
-        .post-entry h2 {
-            margin-top: 0;
-        }
-
-        .post-meta {
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
-
-        .read-more {
-            display: inline-block;
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .read-more:hover {
-            background-color: #0056b3;
-            text-decoration: none;
-        }
-
-        /* --- Pie de Página (Footer) --- */
-        .main-footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-        }
-
-        .main-footer p {
-            margin: 0;
-        }
-
-    </style>
+    <title>Mi Blog de Prueba con Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800 font-sans leading-normal">
 
-    <header class="main-header">
-        <div class="container">
-            <h1>Mi Rincón Digital 📝</h1>
-            <p>Un espacio para compartir ideas, tutoriales y reflexiones.</p>
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="container mx-auto p-6 text-center">
+            <h1 class="text-4xl font-bold text-gray-900">Mi Rincón Digital 📝</h1>
+            <p class="text-gray-600 mt-2">Un espacio para compartir ideas, tutoriales y reflexiones.</p>
         </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <a href="#">Inicio</a>
-            <a href="#">Sobre mí</a>
-            <a href="#">Categorías</a>
-            <a href="#">Contacto</a>
+    <nav class="bg-gray-800 text-white">
+        <div class="container mx-auto p-3 text-center">
+            <a href="#" class="font-bold px-4 py-2 hover:bg-gray-700 rounded-md">Inicio</a>
+            <a href="#" class="font-bold px-4 py-2 hover:bg-gray-700 rounded-md">Sobre mí</a>
+            <a href="#" class="font-bold px-4 py-2 hover:bg-gray-700 rounded-md">Categorías</a>
+            <a href="#" class="font-bold px-4 py-2 hover:bg-gray-700 rounded-md">Contacto</a>
         </div>
     </nav>
 
-    <main class="main-content">
-        <div class="container">
+    <main class="py-10">
+        <div class="container mx-auto px-4 md:px-0">
             
-            <article class="post-entry">
-                <h2><a href="#">Primeros Pasos con HTML y CSS</a></h2>
-                <p class="post-meta">Publicado el 1 de Octubre, 2025 por Alex Doe</p>
-                <p>Explora los fundamentos para construir tu primera página web. En este artículo, cubriremos las etiquetas esenciales de HTML y cómo darles estilo con CSS para crear diseños atractivos y funcionales desde cero. ¡Perfecto para principiantes!</p>
-                <a href="#" class="read-more">Leer Más &rarr;</a>
+            <article class="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-8">
+                <h2 class="text-3xl font-bold mb-2">
+                    <a href="#" class="text-gray-900 hover:text-blue-600">Primeros Pasos con HTML y CSS</a>
+                </h2>
+                <p class="text-sm text-gray-500 mb-4">Publicado el 1 de Octubre, 2025 por Alex Doe</p>
+                <p class="text-gray-700 mb-6">Explora los fundamentos para construir tu primera página web. En este artículo, cubriremos las etiquetas esenciales de HTML y cómo darles estilo con CSS para crear diseños atractivos y funcionales desde cero. ¡Perfecto para principiantes!</p>
+                <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                    Leer Más &rarr;
+                </a>
             </article>
 
-            <article class="post-entry">
-                <h2><a href="#">Guía Completa de Flexbox en CSS</a></h2>
-                <p class="post-meta">Publicado el 28 de Septiembre, 2025 por Alex Doe</p>
-                <p>Domina el poder de Flexbox para crear layouts modernos y flexibles. Olvídate de los viejos trucos con floats y aprende a alinear elementos de manera sencilla y eficiente. Incluye ejemplos prácticos y visuales para facilitar el aprendizaje.</p>
-                <a href="#" class="read-more">Leer Más &rarr;</a>
+            <article class="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-8">
+                <h2 class="text-3xl font-bold mb-2">
+                    <a href="#" class="text-gray-900 hover:text-blue-600">Guía Completa de Flexbox en CSS</a>
+                </h2>
+                <p class="text-sm text-gray-500 mb-4">Publicado el 28 de Septiembre, 2025 por Alex Doe</p>
+                <p class="text-gray-700 mb-6">Domina el poder de Flexbox para crear layouts modernos y flexibles. Olvídate de los viejos trucos con floats y aprende a alinear elementos de manera sencilla y eficiente. Incluye ejemplos prácticos y visuales para facilitar el aprendizaje.</p>
+                <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                    Leer Más &rarr;
+                </a>
             </article>
 
-            <article class="post-entry">
-                <h2><a href="#">10 Consejos para Escribir Código Limpio</a></h2>
-                <p class="post-meta">Publicado el 25 de Septiembre, 2025 por Alex Doe</p>
-                <p>El código no solo debe funcionar, también debe ser legible y fácil de mantener. Aquí te dejamos 10 consejos prácticos que puedes aplicar hoy mismo para mejorar la calidad de tu código y facilitar la colaboración con otros desarrolladores.</p>
-                <a href="#" class="read-more">Leer Más &rarr;</a>
+            <article class="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-8">
+                <h2 class="text-3xl font-bold mb-2">
+                    <a href="#" class="text-gray-900 hover:text-blue-600">10 Consejos para Escribir Código Limpio</a>
+                </h2>
+                <p class="text-sm text-gray-500 mb-4">Publicado el 25 de Septiembre, 2025 por Alex Doe</p>
+                <p class="text-gray-700 mb-6">El código no solo debe funcionar, también debe ser legible y fácil de mantener. Aquí te dejamos 10 consejos prácticos que puedes aplicar hoy mismo para mejorar la calidad de tu código y facilitar la colaboración con otros desarrolladores.</p>
+                <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                    Leer Más &rarr;
+                </a>
             </article>
 
         </div>
     </main>
 
-    <footer class="main-footer">
-        <div class="container">
+    <footer class="bg-gray-800 text-white mt-10">
+        <div class="container mx-auto p-6 text-center">
             <p>&copy; 2025 Mi Blog de Prueba. Todos los derechos reservados.</p>
         </div>
     </footer>
