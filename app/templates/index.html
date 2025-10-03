@@ -1,33 +1,57 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Inicio - Mi Blog de Prueba
+    Inicio - ModernBlog
 {% endblock %}
 
 {% block content %}
-<div class="container mx-auto px-4 md:px-0">
-    
-    <article class="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-8">
-        <h2 class="text-3xl font-bold mb-2">
-            <a href="#" class="text-gray-900 hover:text-blue-600">Primeros Pasos con HTML y CSS</a>
-        </h2>
-        <p class="text-sm text-gray-500 mb-4">Publicado el 1 de Octubre, 2025 por Alex Doe</p>
-        <p class="text-gray-700 mb-6">Explora los fundamentos para construir tu primera página web...</p>
-        <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-            Leer Más &rarr;
-        </a>
-    </article>
-
-    <article class="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-8">
-        <h2 class="text-3xl font-bold mb-2">
-            <a href="#" class="text-gray-900 hover:text-blue-600">Guía Completa de Flexbox en CSS</a>
-        </h2>
-        <p class="text-sm text-gray-500 mb-4">Publicado el 28 de Septiembre, 2025 por Alex Doe</p>
-        <p class="text-gray-700 mb-6">Domina el poder de Flexbox para crear layouts modernos y flexibles...</p>
-        <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-            Leer Más &rarr;
-        </a>
-    </article>
-
+<div class="px-4 py-10 sm:px-6 lg:px-8">
+    <div class="@container">
+        <div class="flex min-h-[480px] flex-col items-start justify-end gap-6 rounded-xl bg-cover bg-center bg-no-repeat px-4 pb-10 @[480px]:px-10" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2070&auto=format&fit=crop");'>
+            <div class="flex flex-col gap-4 text-left">
+                <h1 class="font-display text-4xl font-bold leading-tight tracking-tight text-white @[480px]:text-5xl">
+                    Embracing Minimalism: The Future of Web Design
+                </h1>
+                <h2 class="text-base font-normal leading-normal text-white @[480px]:text-lg">
+                    Discover how stripping back the non-essentials leads to more engaging digital experiences.
+                </h2>
+            </div>
+            <button class="flex h-12 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-6 text-sm font-bold leading-normal tracking-wide text-background-dark transition-colors hover:bg-opacity-80">
+                <span class="truncate">Read More</span>
+            </button>
+        </div>
+    </div>
 </div>
+
+<h2 class="font-display px-4 pb-3 pt-5 text-3xl font-bold leading-tight tracking-tight sm:px-6 lg:px-8">Recent Posts</h2>
+<div class="grid grid-cols-1 gap-8 p-4 sm:grid-cols-2 sm:p-6 lg:grid-cols-3 lg:p-8">
+    
+    <div class="group flex transform flex-col gap-4 pb-4 transition-transform duration-300 hover:-translate-y-2">
+        <div class="aspect-video w-full rounded-lg bg-cover bg-center bg-no-repeat" style='background-image: url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop");'></div>
+        <div class="flex flex-col gap-2">
+            <p class="text-sm font-semibold uppercase text-primary">Technology</p>
+            <p class="font-display text-lg font-bold transition-colors group-hover:text-primary">The Ultimate Guide to Building Your Own PC</p>
+            <p class="text-sm font-normal text-gray-500 dark:text-gray-400">A step-by-step guide for beginners to assemble their dream computer from scratch.</p>
+        </div>
+    </div>
+
+    <div class="group flex transform flex-col gap-4 pb-4 transition-transform duration-300 hover:-translate-y-2">
+        <div class="aspect-video w-full rounded-lg bg-cover bg-center bg-no-repeat" style='background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop");'></div>
+        <div class="flex flex-col gap-2">
+            <p class="text-sm font-semibold uppercase text-primary">Travel</p>
+            <p class="font-display text-lg font-bold transition-colors group-hover:text-primary">10 Must-Visit Destinations for Solo Travelers</p>
+            <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Explore breathtaking locations that are perfect for your next solo adventure.</p>
+        </div>
+    </div>
+
+    <div class="group flex transform flex-col gap-4 pb-4 transition-transform duration-300 hover:-translate-y-2">
+        <div class="aspect-video w-full rounded-lg bg-cover bg-center bg-no-repeat" style='background-image: url("https://images.unsplash.com/photo-1473093226795-af9932fe5856?q=80&w=1994&auto=format&fit=crop");'></div>
+        <div class="flex flex-col gap-2">
+            <p class="text-sm font-semibold uppercase text-primary">Food</p>
+            <p class="font-display text-lg font-bold transition-colors group-hover:text-primary">Simple & Delicious Weeknight Pasta Recipes</p>
+            <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Quick and easy pasta dishes that will satisfy your cravings.</p>
+        </div>
+    </div>
+
+    </div>
 {% endblock %}
