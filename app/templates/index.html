@@ -1,73 +1,33 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Blog de Prueba con Tailwind CSS</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
-</head>
-<body class="bg-gray-100 text-gray-800 font-sans leading-normal">
+{% extends "base.html" %}
 
-    <header class="bg-white shadow-sm border-b border-gray-200">
-        <div class="container mx-auto p-6 text-center">
-            <h1 class="text-4xl font-bold text-gray-900">Mi Rincón Digital 📝</h1>
-            <p class="text-gray-600 mt-2">Un espacio para compartir ideas, tutoriales y reflexiones.</p>
-        </div>
-    </header>
+{% block title %}
+    Inicio - Mi Blog de Prueba
+{% endblock %}
 
-    <nav class="bg-gray-800 text-white">
-        <div class="container mx-auto p-3 text-center">
-            <a href="#" class="font-bold px-4 py-2 hover:bg-gray-700 rounded-md">Inicio</a>
-            <a href="#" class="font-bold px-4 py-2 hover:bg-gray-700 rounded-md">Sobre mí</a>
-            <a href="#" class="font-bold px-4 py-2 hover:bg-gray-700 rounded-md">Categorías</a>
-            <a href="#" class="font-bold px-4 py-2 hover:bg-gray-700 rounded-md">Contacto</a>
-        </div>
-    </nav>
+{% block content %}
+<div class="container mx-auto px-4 md:px-0">
+    
+    <article class="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-3xl font-bold mb-2">
+            <a href="#" class="text-gray-900 hover:text-blue-600">Primeros Pasos con HTML y CSS</a>
+        </h2>
+        <p class="text-sm text-gray-500 mb-4">Publicado el 1 de Octubre, 2025 por Alex Doe</p>
+        <p class="text-gray-700 mb-6">Explora los fundamentos para construir tu primera página web...</p>
+        <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+            Leer Más &rarr;
+        </a>
+    </article>
 
-    <main class="py-10">
-        <div class="container mx-auto px-4 md:px-0">
-            
-            <article class="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-8">
-                <h2 class="text-3xl font-bold mb-2">
-                    <a href="#" class="text-gray-900 hover:text-blue-600">Primeros Pasos con HTML y CSS</a>
-                </h2>
-                <p class="text-sm text-gray-500 mb-4">Publicado el 1 de Octubre, 2025 por Alex Doe</p>
-                <p class="text-gray-700 mb-6">Explora los fundamentos para construir tu primera página web. En este artículo, cubriremos las etiquetas esenciales de HTML y cómo darles estilo con CSS para crear diseños atractivos y funcionales desde cero. ¡Perfecto para principiantes!</p>
-                <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                    Leer Más &rarr;
-                </a>
-            </article>
+    <article class="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-3xl font-bold mb-2">
+            <a href="#" class="text-gray-900 hover:text-blue-600">Guía Completa de Flexbox en CSS</a>
+        </h2>
+        <p class="text-sm text-gray-500 mb-4">Publicado el 28 de Septiembre, 2025 por Alex Doe</p>
+        <p class="text-gray-700 mb-6">Domina el poder de Flexbox para crear layouts modernos y flexibles...</p>
+        <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+            Leer Más &rarr;
+        </a>
+    </article>
 
-            <article class="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-8">
-                <h2 class="text-3xl font-bold mb-2">
-                    <a href="#" class="text-gray-900 hover:text-blue-600">Guía Completa de Flexbox en CSS</a>
-                </h2>
-                <p class="text-sm text-gray-500 mb-4">Publicado el 28 de Septiembre, 2025 por Alex Doe</p>
-                <p class="text-gray-700 mb-6">Domina el poder de Flexbox para crear layouts modernos y flexibles. Olvídate de los viejos trucos con floats y aprende a alinear elementos de manera sencilla y eficiente. Incluye ejemplos prácticos y visuales para facilitar el aprendizaje.</p>
-                <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                    Leer Más &rarr;
-                </a>
-            </article>
-
-            <article class="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-8">
-                <h2 class="text-3xl font-bold mb-2">
-                    <a href="#" class="text-gray-900 hover:text-blue-600">10 Consejos para Escribir Código Limpio</a>
-                </h2>
-                <p class="text-sm text-gray-500 mb-4">Publicado el 25 de Septiembre, 2025 por Alex Doe</p>
-                <p class="text-gray-700 mb-6">El código no solo debe funcionar, también debe ser legible y fácil de mantener. Aquí te dejamos 10 consejos prácticos que puedes aplicar hoy mismo para mejorar la calidad de tu código y facilitar la colaboración con otros desarrolladores.</p>
-                <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                    Leer Más &rarr;
-                </a>
-            </article>
-
-        </div>
-    </main>
-
-    <footer class="bg-gray-800 text-white mt-10">
-        <div class="container mx-auto p-6 text-center">
-            <p>&copy; 2025 Mi Blog de Prueba. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+</div>
+{% endblock %}
