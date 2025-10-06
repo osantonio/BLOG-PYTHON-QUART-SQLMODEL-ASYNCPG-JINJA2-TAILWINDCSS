@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Crear Nuevo Usuario - ModernBlog
+{% endblock %}
+
+{% block content %}
+<div class="px-4 pb-10 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-6xl">
+    <div class="sm:flex sm:items-center sm:justify-between">
+        <div class="sm:flex-auto">
+            <h1 class="font-display text-4xl font-bold tracking-tight text-background-dark dark:text-background-light">
+                Crear Nuevo Usuario
+            </h1>
+            <p class="mt-2 text-lg text-gray-500 dark:text-gray-400">
+                Completa los campos para añadir un nuevo usuario al sistema.
+            </p>
+        </div>
+        <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+            <a href="{{ url_for('usuarios.listar') }}" class="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-background-dark shadow-sm transition-colors hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Volver al Listado
+            </a>
+        </div>
+    </div>
+</div>
+
+    <div class="mt-8 flow-root">
+        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                <div class="overflow-hidden shadow sm:rounded-lg">
+                    <form action="{{ url_for('usuarios.crear') }}" method="POST">
+                        <div class="bg-gray-50 dark:bg-gray-800 px-4 py-5 sm:p-6">
+                            <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                                
+                                <div class="sm:col-span-3">
+                                    <label for="username" class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200">Nombre de usuario</label>
+                                    <div class="mt-2">
+                                        <input type="text" name="username" id="username" required minlength="3" placeholder="ej: alexdoe" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary dark:bg-gray-700 dark:text-white dark:ring-gray-600 dark:focus:ring-primary sm:text-sm sm:leading-6">
+                                    </div>
+                                </div>
+
+                                <div class="sm:col-span-3">
+                                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200">Correo electrónico</label>
+                                    <div class="mt-2">
+                                        <input type="email" name="email" id="email" required placeholder="tu@correo.com" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary dark:bg-gray-700 dark:text-white dark:ring-gray-600 dark:focus:ring-primary sm:text-sm sm:leading-6">
+                                    </div>
+                                </div>
+
+                                <div class="sm:col-span-full">
+                                    <label for="password" class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200">Contraseña</label>
+                                    <div class="mt-2">
+                                        <input type="password" name="password" id="password" required placeholder="••••••••" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary dark:bg-gray-700 dark:text-white dark:ring-gray-600 dark:focus:ring-primary sm:text-sm sm:leading-6">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-800/50 px-4 py-3 text-right sm:px-6">
+                            <button type="submit" class="inline-flex justify-center rounded-md bg-primary py-2 px-4 text-sm font-bold text-background-dark shadow-sm hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark">
+                                Crear Usuario
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

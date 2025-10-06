@@ -1,1 +1,23 @@
+/* 1. Importar fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
+
+
+/* 2. Configuración del tema de Tailwind */
+@theme {
+  /* Definiendo las familias de fuentes como variables CSS */
+  --font-display: "Lato", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+
+  /* Definiendo los colores personalizados */
+  --color-primary: #AEC6CF;
+  --color-background-light: #FFFFFF;
+  --color-background-dark: #333333;
+}
+
+/* 3. Importar la base de Tailwind CSS */
 @import "tailwindcss";
+
+/* 4. Configuración de variantes de Tailwind para el tema oscuro */
+@custom-variant dark (&:where(.dark, .dark *));

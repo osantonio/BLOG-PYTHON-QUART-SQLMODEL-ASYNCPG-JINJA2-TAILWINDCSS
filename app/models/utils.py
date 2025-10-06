@@ -1,32 +1,21 @@
-# app/models/utils.py
-
-from datetime import datetime
 from typing import Optional
-import pytz
-from sqlalchemy import func
-from sqlmodel import Field, SQLModel
+from sqlmodel import Field, SQLModel, Column, DateTime
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
-# Definimos la zona horaria de Bogotá
-BOGOTA_TIMEZONE = pytz.timezone('America/Bogota')
-
-def get_bogota_time():
-    """Función para obtener la hora actual en la zona horaria de Bogotá."""
-    return datetime.now(BOGOTA_TIMEZONE)
+def colombia_now():
+    """Devuelve la hora actual en zona horaria de Colombia."""
+    return datetime.now(ZoneInfo("America/Bogota"))
 
 class TimestampModel(SQLModel):
     """
-    Un modelo base que incluye campos de timestamp para la fecha de creación y actualización.
+    Modelo base con campos de creación y actualización en hora Colombia (UTC−5).
     """
     id: Optional[int] = Field(default=None, primary_key=True)
 
     created_at: datetime = Field(
-        default_factory=get_bogota_time,
-        nullable=False,
-        sa_column_kwargs={"server_default": func.now()}
+        sa_column=Column(DateTime(timezone=True), default=colombia_now)
     )
-
     updated_at: datetime = Field(
-        default_factory=get_bogota_time,
-        nullable=False,
-        sa_column_kwargs={"onupdate": func.now(), "server_default": func.now()}
+        sa_column=Column(DateTime(timezone=True), default=colombia_now, onupdate=colombia_now)
     )

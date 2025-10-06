@@ -5,68 +5,31 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>{% block title %}ModernBlog - A Minimalist Blog{% endblock %}</title>
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-    
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#AEC6CF",
-                        "background-light": "#FFFFFF",
-                        "background-dark": "#333333",
-                    },
-                    fontFamily: {
-                        "display": ["Lato", "sans-serif"],
-                        "body": ["Montserrat", "sans-serif"]
-                    },
-                },
-            },
-        }
-    </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-body text-background-dark dark:text-background-light">
-    <div class="relative flex min-h-screen w-full flex-col">
-        <div class="flex h-full grow flex-col">
-            <div class="flex flex-1 justify-center">
-                <div class="flex max-w-[1200px] flex-1 flex-col">
-                    
-                    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-700 px-10 py-4">
-                        <div class="flex items-center gap-4">
-                            <div class="size-6 text-primary">
-                                <span class="material-symbols-outlined">article</span>
-                            </div>
-                            <h2 class="text-xl font-bold font-display tracking-tight">ModernBlog</h2>
-                        </div>
-                        <div class="flex flex-1 justify-end gap-8">
-                            <div class="flex items-center gap-9">
-                                <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
-                                <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Technology</a>
-                                <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Travel</a>
-                                <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Food</a>
-                                <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Lifestyle</a>
-                            </div>
-                        </div>
-                    </header>
-                    
-                    {% block content %}{% endblock %}
+<body class="min-h-screen flex flex-col bg-background-light dark:bg-background-dark font-body text-background-dark dark:text-background-light">
 
-                    <footer class="mt-10 flex flex-col gap-6 border-t border-solid border-gray-200 px-5 py-10 text-center dark:border-gray-700">
-                        <p class="text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">© 2025 ModernBlog. Todos los derechos reservados.</p>
-                    </footer>
+    {% include 'navbar.html' %}
+    {% include 'sidebar.html' %}
 
-                </div>
-            </div>
+    <!-- Contenedor principal con layout vertical -->
+    <div id="content-area" class="flex flex-col transition-all duration-300 ease-in-out">
+        <div class="w-full max-w-6xl mx-auto flex flex-col">
+            
+            {% include 'flash.html' %}
+
+            <!-- Contenido principal que crece para ocupar el espacio -->
+            <main class="flex-grow">
+                {% block content %}{% endblock %}
+            </main>
+
+            <!-- Footer que se mantiene al fondo -->
+            <footer class="w-full gap-6 border-t border-solid border-gray-200 px-5 py-3.5 text-center dark:border-gray-700">
+                <p class="text-sm font-normal text-gray-500 dark:text-gray-400">© 2025 ModernBlog. All rights reserved.</p>
+            </footer>
         </div>
     </div>
+
 </body>
 </html>

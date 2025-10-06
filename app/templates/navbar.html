@@ -1,0 +1,22 @@
+<header class="sticky top-0 z-40 w-full bg-background-light dark:bg-background-dark border-b border-solid border-gray-200 dark:border-gray-700">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center gap-4">
+                {% include 'sidebar_burguer.html' %}
+                <div class="flex items-center gap-4">
+                    <div class="size-6 text-primary"><span class="material-symbols-outlined">article</span></div>
+                    <a class="text-xl font-bold font-display tracking-tight" href="{{ url_for('main.hello')}}">ModernBlog</a>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-5">
+                <div class="hidden md:flex items-center gap-9">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="{{ url_for('main.hello') }}">Inicio</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="{{ url_for('usuarios.listar') }}">Usuarios</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Travel</a>
+                </div>
+                {% include 'darkmode.html' %}
+            </div>
+        </div>
+    </div>
+</header>
