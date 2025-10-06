@@ -16,7 +16,7 @@ usuarios_bp = Blueprint('usuarios', __name__, url_prefix='/usuarios')
 @usuarios_bp.route('/')
 async def listar():
     page = request.args.get('page', 1, type=int)
-    per_page = 5
+    per_page = 10
     # Calculamos el offset
     offset = (page - 1) * per_page
 
